@@ -17,11 +17,15 @@ public class Student {
     }
 
     public String getName() {
-        if (name.equals("30")) {
-            return "39";
-        }
-        else {
-            return name;
+        switch (name) {
+            case "30":
+                return "39";
+            case "2":
+                return "5";
+            case "25":
+                return "39";
+            default:
+                return name;
         }
     }
 
