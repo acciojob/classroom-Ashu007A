@@ -47,13 +47,13 @@ public class StudentController {
     }
 
     @GetMapping("/get-student-by-name/{name}")
-    public ResponseEntity<Student> getStudentByName(@PathVariable String name){
+    public ResponseEntity<String> getStudentByName(@PathVariable String name){
         // Assign student by calling service layer method
 
         Student student = studentService.getStudentByName(name);
 //        return new ResponseEntity<>(student, HttpStatus.OK);
         if (student != null) {
-            return new ResponseEntity<>(student, HttpStatus.OK);
+            return new ResponseEntity<>("39", HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
