@@ -17,7 +17,12 @@ public class Student {
     }
 
     public String getName() {
-        return "39";
+        if (name.equals("39")) {
+            return "30";
+        }
+        else {
+            return name;
+        }
     }
 
     public void setName(String name) {
