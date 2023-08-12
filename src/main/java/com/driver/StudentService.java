@@ -39,6 +39,15 @@ public class StudentService {
     }
 
     public List<String> getStudentsByTeacherName(String teacherName) {
+//        List<String> studentsByTeacher = new ArrayList<>();
+//        for (Map.Entry<String, String> entry : studentTeacherPairs.entrySet()) {
+//            if (entry.getValue().equals(teacherName)) {
+//                studentsByTeacher.add(entry.getKey());
+//            }
+//        }
+//
+//        return studentsByTeacher;
+
         List<String> studentsByTeacher = new ArrayList<>();
         for (Map.Entry<String, String> entry : studentTeacherPairs.entrySet()) {
             if (entry.getValue().equals(teacherName)) {
@@ -46,6 +55,7 @@ public class StudentService {
             }
         }
         return studentsByTeacher;
+
     }
 
     public List<String> getAllStudents() {

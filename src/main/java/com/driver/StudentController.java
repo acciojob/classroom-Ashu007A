@@ -51,7 +51,12 @@ public class StudentController {
         // Assign student by calling service layer method
 
         Student student = studentService.getStudentByName(name);
-        return new ResponseEntity<>(student, HttpStatus.OK);
+//        return new ResponseEntity<>(student, HttpStatus.OK);
+        if (student != null) {
+            return new ResponseEntity<>(student, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
 
     }
 
@@ -60,7 +65,12 @@ public class StudentController {
         // Assign student by calling service layer method
 
         Teacher teacher = studentService.getTeacherByName(name);
-        return new ResponseEntity<>(teacher, HttpStatus.OK);
+//        return new ResponseEntity<>(teacher, HttpStatus.OK);
+        if (teacher != null) {
+            return new ResponseEntity<>(teacher, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
 
     }
 
@@ -69,7 +79,12 @@ public class StudentController {
         // Assign list of student by calling service layer method
 
         List<String> students = studentService.getStudentsByTeacherName(teacher);
-        return new ResponseEntity<>(students, HttpStatus.OK);
+//        return new ResponseEntity<>(students, HttpStatus.OK);
+        if (!students.isEmpty()) {
+            return new ResponseEntity<>(students, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
 
     }
 
